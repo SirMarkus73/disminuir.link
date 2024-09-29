@@ -1,19 +1,20 @@
-import type { Config } from 'tailwindcss'
+// tailwind.config.js
+import { nextui } from "@nextui-org/react";
+import prose from "@tailwindcss/typography";
 
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+const config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    // ...
+    // make sure it's pointing to the ROOT node_module
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {
-      colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-      },
-    },
+    extend: {},
   },
-  plugins: [],
+  darkMode: "class",
+  plugins: [prose(), nextui({addCommonColors: true, defaultTheme: "dark"})]
 }
-export default config
+
+export default config;
