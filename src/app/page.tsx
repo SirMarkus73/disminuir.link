@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main className="p-3 grid gap-3 place-content-center min-h-screen">
       <section className="prose text-foreground">
-        <h1 className="text-primary">Acortar.link</h1>
+        <h1 className="text-primary">disminuir.link</h1>
         <p>Comienza a acortar tus enlaces de manera fácil y rápida.</p>
       </section>
       <Button as={Link} href="/dashboard">

@@ -29,7 +29,7 @@ export default function App() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p className="font-bold text-inherit">acortar.link</p>
+          <p className="font-bold text-inherit">disminuir.link</p>
         </NavbarBrand>
       </NavbarContent>
 
