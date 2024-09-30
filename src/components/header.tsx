@@ -1,6 +1,7 @@
 'use client'
 
 import {
+  Divider,
   Navbar,
   NavbarBrand,
   NavbarContent,
@@ -9,8 +10,9 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import ActiveLink from './activeLink'
+import ThemeSwitcher from './themeSwitcher'
 
 const menuItems = [
   { name: 'Inicio', href: '/' },
@@ -38,6 +40,9 @@ export default function App() {
             <ActiveLink href={item.href}>{item.name}</ActiveLink>
           </NavbarItem>
         ))}
+        <NavbarMenuItem>
+          <ThemeSwitcher />
+        </NavbarMenuItem>
       </NavbarContent>
 
       <NavbarMenu>
@@ -48,6 +53,10 @@ export default function App() {
             </ActiveLink>
           </NavbarMenuItem>
         ))}
+        <Divider />
+        <NavbarMenuItem className="w-40">
+          <ThemeSwitcher />
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   )

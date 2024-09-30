@@ -17,7 +17,7 @@ const config = {
     nextui({
       addCommonColors: true,
       themes: {
-        'purple-dark': {
+        dark: {
           extend: 'dark', // <- inherit default values from dark theme
           colors: {
             background: '#0D001A',
