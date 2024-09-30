@@ -1,7 +1,6 @@
 'use client'
 
 import {
-  Button,
   Link,
   Navbar,
   NavbarBrand,
@@ -12,6 +11,7 @@ import {
   NavbarMenuToggle,
 } from '@nextui-org/react'
 import { useState } from 'react'
+import ActiveLink from './activeLink'
 
 const menuItems = [
   { name: 'Inicio', href: '/' },
@@ -34,21 +34,19 @@ export default function App() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {menuItems.map((item) => {
-          return (
-            <NavbarItem key={item.name}>
-              <Link href={item.href}>{item.name}</Link>
-            </NavbarItem>
-          )
-        })}
+        {menuItems.map((item) => (
+          <NavbarItem key={item.name}>
+            <ActiveLink href={item.href}>{item.name}</ActiveLink>
+          </NavbarItem>
+        ))}
       </NavbarContent>
 
       <NavbarMenu>
         {menuItems.map((item) => (
           <NavbarMenuItem key={`${item.name}`}>
-            <Link className="w-full" href={item.href} size="lg">
+            <ActiveLink href={item.href} className="w-full" size="lg">
               {item.name}
-            </Link>
+            </ActiveLink>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
