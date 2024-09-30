@@ -1,0 +1,6 @@
+{
+    "crons": [{
+      "path": "/api/links/removeInvalid",
+    "schedule": "0 1 * * *"
+    }]
+  }
