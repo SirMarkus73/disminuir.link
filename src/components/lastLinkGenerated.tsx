@@ -12,7 +12,12 @@ export default async function lastLinkGenerated() {
 
   return lastLink ? (
     <Snippet variant="shadow" color="primary" size="md" className="h-12">
-      <Link href={lastLink.path} color="foreground" target="_blank">
+      <Link
+        href={lastLink.path}
+        color="foreground"
+        target="_blank"
+        className="text-wrap"
+      >
         {lastLink.shortedLink}
       </Link>
     </Snippet>
@@ -24,7 +29,12 @@ export default async function lastLinkGenerated() {
       hideCopyButton
       className="h-12"
     >
-      <Link color="foreground" as="span">
+      <Link
+        color="foreground"
+        as="pre"
+        className="text-foreground"
+        style={{ textWrap: 'wrap' }}
+      >
         Todavía no has acortado ningún enlace, ¿a que esperas?
       </Link>
     </Snippet>
