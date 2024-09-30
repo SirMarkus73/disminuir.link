@@ -7,15 +7,21 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "biome lint --write",
-		"format": "biome format --write"
+		"format": "biome format --write",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate",
+		"db:studio": "drizzle-kit studio"
 	},
 	"dependencies": {
+		"@libsql/client": "^0.14.0",
 		"@nextui-org/react": "^2.4.8",
+		"drizzle-orm": "^0.33.0",
 		"framer-motion": "^11.9.0",
 		"lucide-react": "^0.446.0",
 		"next": "14.2.13",
 		"react": "^18",
-		"react-dom": "^18"
+		"react-dom": "^18",
+		"zod": "^3.23.8"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.2",
@@ -23,6 +29,7 @@
 		"@types/node": "^22.7.4",
 		"@types/react": "^18.3.10",
 		"@types/react-dom": "^18.3.0",
+		"drizzle-kit": "^0.24.2",
 		"postcss": "^8.4.47",
 		"tailwindcss": "^3.4.13",
 		"typescript": "^5.6.2"
