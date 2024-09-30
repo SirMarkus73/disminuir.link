@@ -1,40 +1,29 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
-  Input,
-  Snippet,
-} from '@nextui-org/react'
-import { headers } from 'next/headers'
-import { handleSubmit } from './actions'
+import parseLink from '@/lib/parseLink'
+import { Card, CardBody, CardHeader, Snippet } from '@nextui-org/react'
+import { cookies, headers } from 'next/headers'
+import DashboardForm from './dashboardForm'
 
 function Dashboard() {
-  const headersList = headers()
-  const hostname = headersList.get('x-forwarded-host')
+  const lastLink = parseLink(cookies().get('lastLink')?.value as string)
 
   return (
     <main className="flex flex-col justify-center items-center gap-3 p-3">
-      <form action={handleSubmit} className="w-full md:w-3/4 grid gap-2">
-        <h1>Comienza a acortar enlaces</h1>
-        <Input
-          label="Enlace"
-          type="url"
-          name="url"
-          id="url"
-          isRequired
-          validationBehavior="native"
-        />
-        <Button type="submit" fullWidth>
-          disminuir
-        </Button>
-      </form>
-      <Card className="w-full md:w-3/4">
+      <Card className="md:w-3/4 w-full p-3">
+        <CardHeader>Acortar enlace</CardHeader>
+        <CardBody>
+          <DashboardForm />
+        </CardBody>
+      </Card>
+      <Card className="w-full md:w-3/4 p-3">
         <CardHeader>Ultimo enlace acortado</CardHeader>
         <CardBody>
-          <Snippet variant="shadow" color="primary">
-            <a href="/dashboard">{`${hostname}/A4`} </a>
-          </Snippet>
+          {lastLink ? (
+            <Snippet variant="shadow" color="primary">
+              <a href={lastLink.path}>{lastLink.shortedLink} </a>
+            </Snippet>
+          ) : (
+            <p>Aun no has acortado ningún enlace, ¿a que esperas?</p>
+          )}
         </CardBody>
       </Card>
     </main>
