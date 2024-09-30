@@ -10,10 +10,7 @@ interface FormError {
   message: string
 }
 
-export async function handleForm(
-  prevState: FormError[] | null,
-  formData: FormData,
-) {
+export async function handleForm(formData: FormData) {
   const url = formData.get('url')
   const date = formData.get('date')
   const hostname = await getHostname()
@@ -27,14 +24,7 @@ export async function handleForm(
   const parsedData = await formSchema.safeParseAsync({ url, date })
 
   if (parsedData.error) {
-    const errors = parsedData.error.errors.map((error) => {
-      const path = error.path.toString()
-      const message = error.message
-
-      return { path, message }
-    })
-
-    return errors
+    return
   }
 
   const generatedLink = await generateLink({
@@ -44,6 +34,4 @@ export async function handleForm(
   })
 
   nextCookies.set('lastLink', generatedLink.toString())
-
-  return null
 }

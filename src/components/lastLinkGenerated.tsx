@@ -2,10 +2,6 @@ import parseLink from '@/lib/parseLink'
 import { Link, Skeleton, Snippet } from '@nextui-org/react'
 import { cookies } from 'next/headers'
 
-export function LastLinkGeneratedSkeleton() {
-  return <Skeleton className="h-12" as={Snippet} hideCopyButton />
-}
-
 export default async function lastLinkGenerated() {
   const linkFromCookies = cookies().get('lastLink')?.value
   const lastLink = linkFromCookies ? parseLink(linkFromCookies) : null
