@@ -29,12 +29,7 @@ export default async function lastLinkGenerated() {
       hideCopyButton
       className="h-12"
     >
-      <Link
-        color="foreground"
-        as="pre"
-        className="text-foreground"
-        style={{ textWrap: 'wrap' }}
-      >
+      <Link color="foreground" as="pre" className="text-wrap">
         Todavía no has acortado ningún enlace, ¿a que esperas?
       </Link>
     </Snippet>
