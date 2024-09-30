@@ -11,7 +11,7 @@ export default async function lastLinkGenerated() {
   const lastLink = linkFromCookies ? parseLink(linkFromCookies) : null
 
   return lastLink ? (
-    <Snippet variant="shadow" color="primary" size="md" className="h-12">
+    <Snippet variant="shadow" color="primary" size="md" className="min-h-12">
       <Link
         href={lastLink.path}
         color="foreground"
@@ -24,12 +24,12 @@ export default async function lastLinkGenerated() {
   ) : (
     <Snippet
       variant="shadow"
-      color="warning"
+      color="secondary"
       size="md"
       hideCopyButton
-      className="h-12"
+      className="min-h-12"
     >
-      <Link color="foreground" as="pre" className="text-wrap">
+      <Link color="foreground" className="text-wrap">
         Todavía no has acortado ningún enlace, ¿a que esperas?
       </Link>
     </Snippet>
