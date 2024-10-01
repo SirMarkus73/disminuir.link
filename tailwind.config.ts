@@ -15,6 +15,7 @@ const config = {
   plugins: [
     prose(),
     nextui({
+      defaultTheme: 'dark',
       addCommonColors: true,
       themes: {
         dark: {
