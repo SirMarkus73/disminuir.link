@@ -1,5 +1,8 @@
-import LastLinkGenerated from '@/components/lastLinkGenerated'
+import LastLinkGenerated, {
+  LastLinkGeneratedSkeleton,
+} from '@/components/lastLinkGenerated'
 import { Card, CardBody, CardHeader } from '@nextui-org/react'
+import { Suspense } from 'react'
 import DashboardForm from './dashboardForm'
 
 function Dashboard() {
@@ -14,7 +17,9 @@ function Dashboard() {
       <Card className="w-full md:w-3/4 p-3">
         <CardHeader>Ultimo enlace acortado</CardHeader>
         <CardBody>
-          <LastLinkGenerated />
+          <Suspense fallback={<LastLinkGeneratedSkeleton />}>
+            <LastLinkGenerated />
+          </Suspense>
         </CardBody>
       </Card>
     </main>

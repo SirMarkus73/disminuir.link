@@ -1,10 +1,12 @@
-import parseLink from '@/lib/parseLink'
-import { Link, Snippet } from '@nextui-org/react'
-import { cookies } from 'next/headers'
+import { getLastLink } from '@/serverActions/getLastLink'
+import { Link, Skeleton, Snippet } from '@nextui-org/react'
 
-export default async function lastLinkGenerated() {
-  const linkFromCookies = cookies().get('lastLink')?.value
-  const lastLink = linkFromCookies ? parseLink(linkFromCookies) : null
+export function LastLinkGeneratedSkeleton() {
+  return <Snippet as={Skeleton} variant="shadow" />
+}
+
+export default async function LastLinkGenerated() {
+  const lastLink = await getLastLink()
 
   return lastLink ? (
     <Snippet variant="shadow" color="primary" size="md" className="min-h-12">
