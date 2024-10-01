@@ -40,6 +40,7 @@ export default function App() {
             <ActiveLink href={item.href}>{item.name}</ActiveLink>
           </NavbarItem>
         ))}
+        <Divider orientation="vertical" className="h-14" />
         <NavbarMenuItem>
           <ThemeSwitcher />
         </NavbarMenuItem>
