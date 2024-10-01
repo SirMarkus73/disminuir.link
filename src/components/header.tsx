@@ -1,5 +1,6 @@
 'use client'
 
+import { ThemeSwitcherSkeleton } from '@/components/themeSwitcher'
 import {
   Divider,
   Navbar,
@@ -10,9 +11,13 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react'
+import dynamic from 'next/dynamic'
 import { useState } from 'react'
 import ActiveLink from './activeLink'
-import ThemeSwitcher from './themeSwitcher'
+const ThemeSwitcher = dynamic(() => import('@/components/themeSwitcher'), {
+  ssr: false,
+  loading: () => <ThemeSwitcherSkeleton />,
+})
 
 const menuItems = [
   { name: 'Inicio', href: '/' },
