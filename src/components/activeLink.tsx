@@ -1,9 +1,7 @@
 'use client'
 
 import {
-  COMMON_UNITS,
   Link,
-  twMergeConfig,
   type LinkProps,
 } from '@nextui-org/react'
 import { usePathname } from 'next/navigation'

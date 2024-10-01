@@ -1,5 +1,5 @@
 import parseLink from '@/lib/parseLink'
-import { Link, Skeleton, Snippet } from '@nextui-org/react'
+import { Link, Snippet } from '@nextui-org/react'
 import { cookies } from 'next/headers'
 
 export default async function lastLinkGenerated() {

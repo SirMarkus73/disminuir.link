@@ -10,7 +10,7 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react'
-import { Suspense, useState } from 'react'
+import { useState } from 'react'
 import ActiveLink from './activeLink'
 import ThemeSwitcher from './themeSwitcher'
 
