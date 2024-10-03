@@ -4,8 +4,8 @@
 import {
   Select,
   SelectItem,
-  Skeleton,
   type SharedSelection,
+  Skeleton,
 } from '@nextui-org/react'
 import { useTheme } from 'next-themes'
 

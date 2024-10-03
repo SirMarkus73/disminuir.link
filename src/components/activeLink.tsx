@@ -1,9 +1,6 @@
 'use client'
 
-import {
-  Link,
-  type LinkProps,
-} from '@nextui-org/react'
+import { Link, type LinkProps } from '@nextui-org/react'
 import { usePathname } from 'next/navigation'
 
 interface ActiveLinkProps extends LinkProps {
